@@ -12,7 +12,7 @@
         <TextBlock Text="va" VerticalAlignment="Center" FontSize="20"/> 
 
         <ComboBox 
-            Name="atribut_cbx"
+            Name="atribut_cbx1"
             Margin="20 0 0 0"
             Style="{StaticResource MaterialDesignComboBox}"
             Width="150" >
@@ -24,7 +24,7 @@
         </StackPanel>
 
         <ComboBox 
-            Name="qiymat_cbx"
+            Name="qiymat_cbx1"
             Style="{StaticResource MaterialDesignComboBox}"
             Width="150" >
 

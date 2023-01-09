@@ -187,6 +187,7 @@
 
                         <ComboBox 
                             Name="atribut_cbx"
+                            SelectionChanged="atribut_cbx_SelectionChanged"
                             Style="{StaticResource MaterialDesignComboBox}"
                             Width="150" >
 
@@ -198,6 +199,7 @@
 
                         <ComboBox 
                             Name="qiymat_cbx"
+                            SelectionChanged="qiymat_cbx_SelectionChanged"
                             Style="{StaticResource MaterialDesignComboBox}"
                             Width="150" >
         
