@@ -9,5 +9,6 @@ namespace WebApp.IServices
         Task CreateUserAsync(User user);
         Task UpdateUserAsync(User user);
         Task DeleteUser(Guid id);
+        Task<bool> ExistUser(Guid id);
     }
 }

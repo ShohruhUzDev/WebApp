@@ -1,23 +1,36 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using WebApp.IServices;
 using WebApp.Models;
 
 namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IUserService _userService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IUserService userService)
         {
-            _logger = logger;
+            _userService = userService;
         }
 
-        public IActionResult Index()
+        public async Task< IActionResult> Index()
+        {
+            return View(await _userService.GetAllUsersAsync());
+        }
+        public IActionResult CreateUser()
+        {
+            return RedirectToAction();
+        }
+        public IActionResult Create()
         {
             return View();
         }
+        public  IActionResult AllUsers()
+        {
 
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

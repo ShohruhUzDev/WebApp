@@ -1,0 +1,269 @@
+﻿<Window x:Class="Malika.Views.Export"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Malika.Views"
+       xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Export" Height="800" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+
+        <!--Atribut va qiymatlar-->
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal">
+
+
+            <!--Atribut -->
+            <StackPanel  >
+
+
+                <TextBlock Text="Atributlar"/>
+
+                <ListBox 
+                    x:Name="atributlar_lstbx"
+                    ItemsSource="{Binding XPath=Atributs}"
+                    Height="250" 
+                    Background="AliceBlue">
+
+                </ListBox>
+
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox 
+                        x:Name="atribut_txt"
+                        TextWrapping="Wrap"
+                        Width="400"
+                        Height="55"
+                        FontSize="15"
+                        HorizontalAlignment="Left"
+                        TextAlignment="Left"
+                       
+                        md:HintAssist.Hint="Atribuni kiriting"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+
+                    </TextBox>
+
+
+
+                    <Button 
+                    x:Name="atribut_add_btn"
+                  Click="atribut_add_btn_Click" 
+                    Height="60"
+                    Margin="10"
+                    md:ShadowAssist.ShadowDepth="Depth4"
+                    Background="#709CB4"
+                    md:ButtonAssist.CornerRadius="10"
+                    BorderThickness="0.1">
+                        <StackPanel Orientation="Horizontal">
+                            <md:PackIcon HorizontalAlignment="Left" Kind="Add"
+                                 Foreground="Black"  Height="35" Width="35"/>
+                        </StackPanel>
+                    </Button>
+
+
+
+                </StackPanel>
+            </StackPanel>
+
+
+            <!--qiymatlar-->
+            <StackPanel  >
+
+
+                <TextBlock Text="Qiymatlar"/>
+
+                <ListBox 
+                    x:Name="qiymatlar_lstbx"
+                    Height="250"
+                    Background="AliceBlue">
+
+                </ListBox>
+
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox 
+                        x:Name="qiymat_txt"
+                        TextWrapping="Wrap"
+                        Width="400"
+                        Height="55"
+                        FontSize="15"
+                        HorizontalAlignment="Left"
+                        TextAlignment="Left"
+                       
+                        md:HintAssist.Hint="Qiymatni kiriting"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+
+                    </TextBox>
+
+
+
+                    <Button 
+                    x:Name="qiymat_add_btn"
+                    Click="qiymat_add_btn_Click"                    Height="60"
+                    Margin="10"
+                    md:ShadowAssist.ShadowDepth="Depth4"
+                    Background="#709CB4"
+                    md:ButtonAssist.CornerRadius="10"
+                    BorderThickness="0.1">
+                        <StackPanel Orientation="Horizontal">
+                            <md:PackIcon HorizontalAlignment="Left" Kind="Add"
+                                 Foreground="Black"  Height="35" Width="35"/>
+                        </StackPanel>
+                    </Button>
+
+
+
+                </StackPanel>
+            </StackPanel>
+
+
+            
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" 
+                    Height="100"
+                    Orientation="Horizontal">
+            <Button 
+                   x:Name="delete_btn"
+                Click="delete_btn_Click"
+                    Height="60"
+                    Margin="10"
+                    md:ShadowAssist.ShadowDepth="Depth4"
+                    Background="#709CB4"
+                    md:ButtonAssist.CornerRadius="10"
+                    BorderThickness="0.1">
+                <StackPanel Orientation="Horizontal">
+                    <md:PackIcon HorizontalAlignment="Left"
+                                 Kind="Delete"
+                                 Foreground="Black"  Height="35" Width="35"/>
+                </StackPanel>
+            </Button>
+            <Button 
+                   x:Name="save_btn"
+                   Click="save_btn_Click"
+                    Height="60"
+                    Margin="10"
+                    md:ShadowAssist.ShadowDepth="Depth4"
+                    Background="#709CB4"
+                    md:ButtonAssist.CornerRadius="10"
+                    BorderThickness="0.1">
+                <StackPanel Orientation="Horizontal">
+                    <md:PackIcon HorizontalAlignment="Left"
+                                 Kind="Update"
+                                 Foreground="Black"  Height="35" Width="35"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <!--QOidalar-->
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal">
+
+
+            <!--shartlar-->
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                
+           
+            <StackPanel 
+               
+                Width="460" 
+                Background="AliceBlue" >
+
+
+                    <StackPanel 
+                        Orientation="Horizontal"
+                        Background="Transparent">
+
+                        <TextBlock FontSize="20" Margin="10" Text="Agar"/>
+
+                        <ComboBox 
+                            Name="atribut_cbx"
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            Width="150" >
+
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                            <md:PackIcon HorizontalAlignment="Left" Kind="Equal"
+                                 Foreground="White"  Height="35" Width="35"/>
+                        </StackPanel>
+
+                        <ComboBox 
+                            Name="qiymat_cbx"
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            Width="150" >
+        
+                        </ComboBox>
+
+                    </StackPanel>
+
+
+                    <StackPanel x:Name="oyna">
+
+
+                      
+                    </StackPanel>
+                    <Button 
+                    x:Name="add_btn"
+                  Click="add_btn_Click"
+                            Width="75"
+                    Height="40"
+                    Margin="10"
+                    md:ShadowAssist.ShadowDepth="Depth4"
+                    Background="#709CB4"
+                    md:ButtonAssist.CornerRadius="5"
+                    BorderThickness="0.1">
+                        <StackPanel Orientation="Horizontal">
+                            <md:PackIcon HorizontalAlignment="Left" Kind="Add"
+                                 Foreground="Black"  Height="35" Width="35"/>
+                        </StackPanel>
+                    </Button>
+
+
+                    <StackPanel Orientation="Horizontal" Background="Transparent">
+
+                        <TextBlock FontSize="20" Margin="10" Text="U holda"/>
+
+                        <ComboBox 
+                            
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            Width="150" >
+
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                            <md:PackIcon HorizontalAlignment="Left" Kind="Equal"
+                                 Foreground="White"  Height="35" Width="35"/>
+                        </StackPanel>
+
+                        <ComboBox 
+                           
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            Width="150" >
+
+                        </ComboBox>
+
+                    </StackPanel>
+
+
+                </StackPanel>
+            </ScrollViewer>
+            <!--oynaga chiqarish-->
+            <StackPanel>
+
+            </StackPanel>
+
+        </StackPanel>
+
+
+
+    </Grid>
+
+</Window>

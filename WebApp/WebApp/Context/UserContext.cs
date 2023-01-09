@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WebApp.Models;
 
 namespace WebApp.Context
 {
@@ -9,6 +10,6 @@ namespace WebApp.Context
 
         }
 
-        DbSet<UserContext> Users { get; set; }  
+       public DbSet<User> Users { get; set; }  
     }
 }
