@@ -22,10 +22,9 @@ namespace Malika.Views
     public partial class Export : Window
     {
         public List<string> Atributs { get; set; }=new List<string>();  
-        public List<string> SelectedAtributs { get; set; }=new List<string>();
         public List<string> Qiymats { get; set; }=new List<string>();   
-        public List<string> SelectedQiymats { get; set; }=new List<string>();
-        public bool first_selected=false;
+       
+       
         public Export()
         {
             InitializeComponent();
@@ -61,6 +60,7 @@ namespace Malika.Views
 
 
                 if_Control.qiymat_cbx1.SelectionChanged +=new SelectionChangedEventHandler(OnQiymatSelected);
+              
                 if_Control.atribut_cbx1.SelectionChanged+=new SelectionChangedEventHandler(OnAtributSelected);
              
                 oyna.Children.Add(if_Control);
@@ -158,13 +158,13 @@ namespace Malika.Views
         private void atribut_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            Atributs.Remove(atribut_cbx.SelectedItem.ToString()!);
-            first_selected = true;
+           
         }
 
         private void qiymat_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            Qiymats.Remove(qiymat_cbx.SelectedItem.ToString()!); 
-            first_selected=true;
+            
         }
     }
 }
